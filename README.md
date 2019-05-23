@@ -1,2 +1,7 @@
-# vis_git_history
-Visualize Editing Histories in Git Repos
+### Git Analytics
+
+Analyze editing history in git repos for visualization
+
+#### Features
+
+
