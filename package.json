@@ -1,0 +1,31 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "Orange Chicken (Take away)",
+  "scripts": {
+    "engine": "yarn workspace engine start",
+    "start:jupyter": "jupyter notebook ./notebook",
+    "start": "concurrently -n \"ENGINE,APP\" -c \"bgBlue.bold,bgRed.bold\" --kill-others-on-fail \"yarn engine\" \"yarn workspace webapp start\" "
+  },
+  "private": true,
+  "workspaces": { 
+      "packages": ["engine", "app/js/*"]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Canteen Auntie",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
