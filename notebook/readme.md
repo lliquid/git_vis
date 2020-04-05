@@ -1,0 +1,1 @@
+## ./notebook contains experimental code for extracting useful structure from raw repository data, mature functions will be eventually moved to ./gitrac as a library
