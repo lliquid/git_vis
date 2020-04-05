@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import Container from './vis/container.js';
+import Plot from './vis/plot.js';
 import logo from './brand/imageedit_1_3950696162.png';
 
 import { Layout, Menu, Icon } from 'antd';
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   state = {
     collapsed: true,
-  }
+  };
 
   toggle = () => {
     this.setState({
@@ -56,7 +56,7 @@ class App extends React.Component {
             />
           </Header>
           <Content>
-            <Container/>
+            <Plot/>
           </Content>
         </Layout>
       </Layout>

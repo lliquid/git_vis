@@ -5,7 +5,7 @@ class HotSpot extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {data: {}};
+        this.state = {data: {}, loading: false};
     }
 
 
@@ -17,9 +17,21 @@ class HotSpot extends React.Component {
 
     //filter commit range by specifying a time interval
 
+
     render() {
 
-        return <TreeMap data={this.state.data}/>;
+        return <div>
+                <TreeMap data={this.state.data} loading={this.state.loading}/>;
+            </div>
     }
 
 }
+
+
+class Controls extends React.Component {
+
+    //controls to select file type, authors, and so on
+
+}
+
+export default HotSpot;

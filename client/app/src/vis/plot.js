@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './container.css';
+import './plot.scss';
 
-class Container extends React.Component {
+class Plot extends React.Component {
 
     constructor(props) {
         super(props);
@@ -26,7 +26,10 @@ class Container extends React.Component {
     }
 
     render() {
-        return <div className="container" >
+
+        const {className} = this.props;
+
+        return <div className={className}>
             <div className="title"> {this.props.title} </div>
             <svg className="canvas"
                  width={this.props.width}
@@ -38,10 +41,11 @@ class Container extends React.Component {
 
 }
 
-Container.defaultProps = {
-    title: 'title',
+Plot.defaultProps = {
+    title: 'Plot',
+    className: 'plot',
     width: 600,
     height: 600
 };
 
-export default Container;
+export default Plot;
