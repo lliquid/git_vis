@@ -11,6 +11,12 @@ class Graph {
         this.adjacency_list = {};
     }
 
+    clear() {
+        this.nodes = {};
+        this.links = {};
+        this.adjacency_list = {};
+    }
+
     add_node(nid, data) {
 
         if (this.has_node(nid)) {

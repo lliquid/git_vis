@@ -1,9 +1,15 @@
 import Plot from './plot.js';
+import Graph from '../algo/graph.js';
 
 class NetworkVis extends Plot {
 
+    constructor(props) {
+        super(props);
+        this.graph = Graph();
+    }
 
-    layout(options, data) {
+
+    layout(options) {
 
         const {method, dimension} = options;
 
@@ -23,6 +29,12 @@ class NetworkVis extends Plot {
     }
 
     paint() {
+        super.paint();
+        const {data} = this.props;
+
+        this.graph.clear();
+        this.graph.load_nx_json(data);
+
 
     }
 

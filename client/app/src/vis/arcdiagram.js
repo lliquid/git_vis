@@ -1,17 +1,18 @@
 import NetworkVis from './network-vis';
 import * as d3 from "d3";
+import './arcdiagram.scss';
 
 class ArcDiagram extends NetworkVis {
 
     paint() {
-
-        const {data} = this.props; if (data === undefined) { return; }
+        super.paint();
+        const graph = this.graph;
+        const layout = this.layout({method: 'spectral', dimension: 1});
 
         const svg = d3.select(this.svg.current);
 
-        const layout = this.layout({method: 'spectral', dimension: 1}, data);
-
         //draw arc diagram to show the collaborative relations
+        
 
 
 
