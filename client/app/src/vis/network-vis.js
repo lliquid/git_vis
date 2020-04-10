@@ -5,7 +5,7 @@ class NetworkVis extends Plot {
 
     constructor(props) {
         super(props);
-        this.graph = Graph();
+        this.graph = new Graph();
     }
 
 
@@ -30,7 +30,7 @@ class NetworkVis extends Plot {
 
     paint() {
         super.paint();
-        const {data} = this.props;
+        const {data} = this.props; if (data===undefined) return;
 
         this.graph.clear();
         this.graph.load_nx_json(data);

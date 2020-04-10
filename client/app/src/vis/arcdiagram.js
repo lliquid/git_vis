@@ -6,13 +6,15 @@ class ArcDiagram extends NetworkVis {
 
     paint() {
         super.paint();
+        const {data} = this.props; if (data===undefined) return;
+
         const graph = this.graph;
         const layout = this.layout({method: 'spectral', dimension: 1});
 
         const svg = d3.select(this.svg.current);
 
         //draw arc diagram to show the collaborative relations
-        
+
 
 
 

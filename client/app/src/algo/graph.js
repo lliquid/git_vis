@@ -100,7 +100,7 @@ class Graph {
 
         i = -1;
         while(++i < links.length) {
-            this.add_link(nodes[links[i].source].id, nodes[links[i].target].id, links[i])
+            this.add_link(links[i].source, links[i].target, links[i])
         }
 
     }
