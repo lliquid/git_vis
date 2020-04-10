@@ -37,7 +37,3 @@ def extract_graph(commits, folders=None):
 
 
 
-def extract_collab_graph(commits, folders=None):
-    bg, authors, file_paths = extract_graph(commits, folders=folders)
-    g = bipartite.generic_weighted_projected_graph(bg, authors)
-    return g, authors

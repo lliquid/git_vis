@@ -6,16 +6,29 @@ class Graph {
      */
 
     constructor() {
-        this.nodes = {};
-        this.links = {};
-        this.adjacency_list = {};
+        this._nodes = {};
+        this._links = {};
+        this._adjacency_list = {};
     }
 
     clear() {
-        this.nodes = {};
-        this.links = {};
-        this.adjacency_list = {};
+        this._nodes = {};
+        this._links = {};
+        this._adjacency_list = {};
     }
+
+    get nodes() {
+        return values(this._nodes);
+    }
+
+    get links() {
+        return values(this._links);
+    }
+
+    get num_nodes() {
+        return this.nodes.length;
+    }
+
 
     add_node(nid, data) {
 
@@ -26,8 +39,8 @@ class Graph {
 
         const n = {...{id: nid + ''}, ...data};
 
-        this.nodes[n.id] = n;
-        this.adjacency_list[n.id] = [];
+        this._nodes[n.id] = n;
+        this._adjacency_list[n.id] = [];
 
         return this;
     }
@@ -47,9 +60,9 @@ class Graph {
             tgt: target + ''
         }, ...data};
 
-        this.links[source + '-' + target] = e;
-        this.adjacency_list[source+''][target+''] = e;
-        this.adjacency_list[target+''][source+''] = e;
+        this._links[source + '-' + target] = e;
+        this._adjacency_list[source+''][target+''] = e;
+        this._adjacency_list[target+''][source+''] = e;
     }
 
     has_node(nid) {
@@ -61,12 +74,15 @@ class Graph {
     }
 
     node(nid) {
-        return this.nodes[nid+''];
+        return this._nodes[nid+''];
     }
 
     link(source, target) {
+
         if (!this.has_node(source)) {return undefined;}
-        return this.adjacency_list[source+''][target+''];
+        if (!this.has_node(target)) {return undefined;}
+
+        return this._adjacency_list[source+''][target+''];
     }
 
     degree(nid) {
@@ -77,13 +93,13 @@ class Graph {
     neighbors(nid) {
         if (!this.has_node(nid)) {return undefined;}
         const n = this.node(nid);
-        return keys(this.adjacency_list[n.id]);
+        return keys(this._adjacency_list[n.id]);
     }
 
     adjacents(nid) {
         if (!this.has_node(nid)) {return undefined;}
         const n = this.node(nid);
-        return values(this.adjacency_list[n.id]);
+        return values(this._adjacency_list[n.id]);
     }
 
     //IO functions

@@ -1,3 +1,21 @@
 .arc-diagram {
 
+  .node {
+    fill: #333;
+    fill-opacity: 0.5;
+
+    text {
+      font-size: 12px;
+      color: #333;
+    }
+
+  }
+
+  .link {
+    fill: none;
+    stroke: #767dab;
+    stroke-width: 1;
+    stroke-opacity: 0.2;
+  }
+
 }
