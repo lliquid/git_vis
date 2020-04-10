@@ -9,6 +9,7 @@ def collect_commits(repo_url):
         # store commit info
         commit_info = {
             "commit_hash": commit.hash,
+            "author_name": commit.author.name,
             "author_email": commit.author.email,
             "author_date": commit.author_date,
             "commit_msg": commit.msg,
@@ -17,6 +18,7 @@ def collect_commits(repo_url):
         # store modification on each file
         for modification in commit.modifications:
             commit_info["modifications"].append({
+                "old_path": modification.old_path,
                 "new_path": modification.new_path,
                 "change_type": str(modification.change_type),
                 "diff": modification.diff,

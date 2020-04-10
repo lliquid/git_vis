@@ -1,6 +1,9 @@
 import React from 'react'
+import * as d3 from 'd3'
+
 import './App.css';
 import Plot from './vis/plot.js';
+import ArcDiagram from './vis/arcdiagram.js';
 import logo from './brand/imageedit_1_3950696162.png';
 
 import { Layout, Menu, Icon } from 'antd';
@@ -20,6 +23,21 @@ class App extends React.Component {
       collapsed: !this.state.collapsed,
     });
   };
+
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+
+    //load data
+    d3.json('./mock/data/collabgraph.json')
+        .then((data) => {
+          this.setState({data: data});
+        })
+
+  }
 
   render() {
     return (
@@ -56,7 +74,7 @@ class App extends React.Component {
             />
           </Header>
           <Content>
-            <Plot/>
+            <ArcDiagram data={this.state.data}/>
           </Content>
         </Layout>
       </Layout>

@@ -28,8 +28,9 @@ class Plot extends React.Component {
     render() {
 
         const {className} = this.props;
+        const {width, height} = this.props;
 
-        return <div className={className}>
+        return <div className={className} style={{width: width, height: height}}>
             <div className="title"> {this.props.title} </div>
             <svg className="canvas"
                  width={this.props.width}

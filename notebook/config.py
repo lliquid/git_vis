@@ -1,2 +1,2 @@
-repo_url = "../data/react-vis"
-export_directory = "../client/app/mock/data"
+repo_url = "../data/react-redux"
+export_directory = "../client/app/public/mock/data"

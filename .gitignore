@@ -1,7 +1,9 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 data/react-vis
-client/app/mock/data
+data/test_repo
+data/react-redux
+client/app/public/mock/data
 gv
 .idea/*
 
