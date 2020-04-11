@@ -28,7 +28,6 @@ class ArcDiagram extends NetworkVis {
                     node.polar_coords.r,
                     node.polar_coords.theta
                 );
-
         }
 
     }
@@ -56,7 +55,7 @@ class ArcDiagram extends NetworkVis {
             .attr('class', 'node');
 
         nodes.append('circle')
-            .attr('r', 2);
+            .attr('r', n=> 2 * n.weight);
 
         nodes.append('text')
             .text(n=>n.id)
@@ -116,9 +115,9 @@ class ArcDiagram extends NetworkVis {
 ArcDiagram.defaultProps = {
     title: 'Plot',
     className: 'arc-diagram network-vis plot',
-    width: 900,
-    height: 900,
-    center: [450, 450], // if undefined, use [width/2, height/2]
+    width: 800,
+    height: 800,
+    center: [400, 400], // if undefined, use [width/2, height/2]
     r_inner: 300, //
     r_outer: 360, // space between inner radius and outer radius can be used to encode auxiliary information of nodes
 };
