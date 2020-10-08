@@ -1,0 +1,93 @@
+@import "../../node_modules/react-day-picker/lib/style";
+
+.DayPicker {
+  font-size:11px;
+  z-index: 10;
+}
+
+.plot.date-range-picker  .controls {
+    position: absolute;
+    z-index: 10;
+    top: 300px;
+    right: 20px;
+    .control-widget {
+      select {
+        border: none;
+        option {
+          border: none;
+        }
+      }
+    }
+
+  }
+
+
+.plot.date-range-picker .info {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    font-size: 16px;
+  font-weight: bold;
+  z-index:10;
+}
+
+.plot.date-range-picker .svg-container {
+  position: absolute;
+  .line {
+    fill: #faad14;
+    stroke: none;
+  }
+  .selection {
+    fill: #f0f0f0;
+    fill-opacity: .2;
+    stroke: #999;
+  }
+  z-index: 0;
+}
+
+.day-cell {
+  position: relative;
+  .date {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .overlay {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .dot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      background-color: #faad14;
+      border-radius: 80%;
+      display: inline-block;
+    }
+  }
+}
+
+
+ .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: #f0f0f0 !important;
+  color: #333;
+}
+ .DayPicker-Day {
+  border-radius: 0 !important;
+}
+ .DayPicker-Day--start:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background-color: #D8D8D8 !important;
+  color: #000 !important;
+
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+}
+ .DayPicker-Day--end {
+  background-color: #D8D8D8 !important;
+  color: #000 !important;
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}

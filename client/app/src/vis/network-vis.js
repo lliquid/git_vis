@@ -5,37 +5,11 @@ class NetworkVis extends Plot {
 
     constructor(props) {
         super(props);
-        this.graph = new Graph();
     }
 
-
-    layout(options) {
-
-        const {method, dimension} = options;
-
-        if (method === 'precomputed') {
-            //precomputed layout in node data
-            return;
-        }
-
-        if (method === 'spectral') {
-
-        }
-
-        if (method === 'tsne') {
-
-        }
-
-    }
 
     paint() {
         super.paint();
-        const {data} = this.props; if (data===undefined) return;
-
-        this.graph.clear();
-        this.graph.load_nx_json(data);
-
-
     }
 
 }

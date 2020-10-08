@@ -1,4 +1,5 @@
-import {keys, values} from 'lodash';
+import {max, min, map, keys, values} from 'lodash';
+import * as d3 from 'd3';
 
 class Graph {
     /*
@@ -62,7 +63,6 @@ class Graph {
 
         this._links[source + '-' + target] = e;
         this._adjacency_list[source+''][target+''] = e;
-        this._adjacency_list[target+''][source+''] = e;
     }
 
     has_node(nid) {
@@ -102,6 +102,22 @@ class Graph {
         return values(this._adjacency_list[n.id]);
     }
 
+    layout(method, width, height) {
+        if (method === 'precomputed') { //use precomputed layout
+            let xs = map(this.nodes, n=>n.precomputed_layout.x);
+            let ys = map(this.nodes, n=>n.precomputed_layout.y);
+            let [xmin, xmax, ymin, ymax] = [min(xs), max(xs), min(ys), max(ys)];
+            let xscale = d3.scaleLinear().domain([xmin, xmax]).range([0, width]);
+            let yscale = d3.scaleLinear().domain([ymin, ymax]).range([0, height]);
+            for (let n of this.nodes) {
+                n.coords = {
+                    x: xscale(n.precomputed_layout.x),
+                    y: yscale(n.precomputed_layout.y)
+                }
+            }
+        }
+    }
+
     //IO functions
     load_nx_json(json) {
         /* load json format exported from networkx lib in python*/
@@ -116,7 +132,8 @@ class Graph {
 
         i = -1;
         while(++i < links.length) {
-            this.add_link(links[i].source, links[i].target, links[i])
+            this.add_link(links[i].source, links[i].target, links[i]);
+
         }
 
     }

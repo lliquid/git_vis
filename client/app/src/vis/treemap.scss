@@ -1,0 +1,87 @@
+.plot.treemap {
+  position: relative;
+
+  .info {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  .controls {
+
+    .widget-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+
+  svg {
+
+    .legendCells {
+      .cell {
+        rect {
+          fill-opacity: 0.8;
+        }
+
+        text {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .node rect {
+      stroke: #fff;
+      stroke-width: 1.5;
+    }
+
+    .node rect:hover {
+      stroke: #666;
+    }
+
+    .node.leaf rect {
+      stroke: #fff;
+      stroke-width: 1;
+    }
+
+    .node.leaf rect:hover {
+      stroke: #666;
+    }
+
+    .node.leaf text {
+      font-weight: 400;
+    }
+
+    .node.leaf .description text {
+      font-size: 10px;
+      fill: #999;
+    }
+
+    .node text {
+      font-size: 12px;
+      fill: #444;
+      font-weight: 600;
+    }
+
+    .navigator {
+      rect {
+        fill: #fff;
+      }
+      text {
+        font-size: 18px;
+        fill: #444;
+        font-weight: bold;
+      }
+      cursor: pointer;
+    }
+
+    .navigator:hover {
+      rect {}
+    }
+
+  }
+
+}

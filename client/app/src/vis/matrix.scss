@@ -1,0 +1,35 @@
+@import '../styles/definition';
+
+
+.matrix {
+
+  .col-label, .row-label {
+    font-family: $primary-font-family;
+    font-size: $secondary-font-size-min;
+    fill: $third-font-color;
+  }
+
+  .col-label.highlight, .row-label.highlight {
+    fill: $primary-font-color;
+    font-weight: bold;
+  }
+
+  .link {
+    fill: #4e79a7;
+  }
+
+  .link:hover {
+    stroke: orange;
+    stroke-opacity: 1.0;
+    stroke-width: 1;
+  }
+
+  .brush .selection {
+    fill: #ddd;
+    stroke: black;
+    stroke-opacity: 1.0;
+    stroke-width: 1;
+  }
+
+
+}

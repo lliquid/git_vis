@@ -127,6 +127,14 @@ class path {
         return this;
     }
 
+    static arc_to(x1, y1) {
+        const r = Math.sqrt(Math.pow(x1 - this.x, 2) + Math.pow(y1 - this.y, 2));
+        this.value += ' A ' + r + ' ' + r + ' 0 0 0 ' + x1 + ' ' + y1;
+        this.x = x1;
+        this.y = y1;
+        return this;
+    }
+
     static close_path() {
         this.value += ' Z ';
         return this;

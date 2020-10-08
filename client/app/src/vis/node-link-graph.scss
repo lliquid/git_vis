@@ -1,0 +1,80 @@
+@import '../styles/definition';
+
+.node-link-graph.network-vis.plot {
+
+  .zoom-controls {
+
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    z-index: 10;
+
+
+
+  }
+
+  .link {
+    fill: none;
+    stroke: #aaa;
+    stroke-opacity: 0.6;
+    stroke-width: 1.5;
+  }
+
+  .node.author_name {
+
+    cursor: move;
+
+    circle {
+      fill: grey;
+      stroke: grey;
+    }
+
+  }
+
+  .node_label.author_name {
+    rect {
+      fill: #fff;
+      fill-opacity: 0.6;
+    }
+
+    text {
+      fill: $secondary-font-color;
+      font-weight: bold;
+    }
+
+  }
+
+  .node.file_path {
+
+    circle {
+      fill: #dddddd;
+      stroke: grey;
+    }
+
+  }
+
+  .node_label.file_path {
+    rect {
+      fill: none;
+    }
+
+    text {
+      fill: none;
+    }
+
+  }
+
+  .node.file_path:hover {
+
+    rect {
+      fill: #fff;
+      fill-opacity: 0.8;
+    }
+
+    text {
+      fill: $secondary-font-color;
+    }
+
+  }
+
+}

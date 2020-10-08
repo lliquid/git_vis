@@ -1,0 +1,16 @@
+.plot.histogram {
+
+  .bar {
+    stroke: #fff;
+  }
+
+  .bar:hover {
+    fill: #ff9351;
+  }
+
+  .brush .selection {
+    fill: #ddd;
+    stroke: #333;
+  }
+
+}

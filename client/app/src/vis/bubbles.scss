@@ -1,0 +1,14 @@
+.plot.bubbles {
+  .circle {
+    circle {
+      stroke: #fff;
+    }
+    circle:hover {
+      stroke: #333;
+    }
+
+  }
+  .label {
+    fill: #000;
+  }
+}
